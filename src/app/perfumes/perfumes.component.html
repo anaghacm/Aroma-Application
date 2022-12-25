@@ -1,0 +1,22 @@
+<div class="perfumeslist">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let p of perfumes">
+      <div class="card h-100">
+        <img id="frimg" src={{p.url}} class="card-img-top" alt="Hollywood Sign on The Hill" />
+        <img src={{p.url1}} class="card-img-top imgtop" alt="Hollywood Sign on The Hill" />
+        <div class="card-body">
+          <h5 class="card-title">{{p.name}}</h5>
+          <p class="card-text">
+            {{p.fragrance}}
+          </p>
+          <p class="card-text" style="font-size: 14px; font-weight: bold;">
+            <i class="fa-solid fa-indian-rupee-sign"></i> {{p.price}}
+          </p>
+          <p class="card-text">
+            <button class="btn btn-lg">ADD TO CART <i class="fa-solid fa-cart-shopping" style="font-size: 18px;"></i></button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

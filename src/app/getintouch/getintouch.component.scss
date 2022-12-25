@@ -1,0 +1,47 @@
+*{
+    font-family: 'Merriweather Sans', sans-serif;
+}
+.contact{
+    width: 60vw;
+    padding: 5rem;
+    margin: auto;
+    // margin-top: 1%;
+    text-align: center;
+    
+}
+h3{
+    font-size: 18px;
+    color: rgb(89, 13, 34);
+    line-height: 5rem;
+    font-weight: bold;
+}
+p{
+    font-size: 14px;
+    color: rgb(89, 13, 34);
+}
+button{
+    background-color: rgb(89, 13, 34);
+    border-radius: 0;
+    color: rgb(255, 240, 243);
+}
+button:hover{
+    color: rgb(255, 240, 243);
+}
+input {
+    border: none;
+    border-bottom: 1px solid rgb(89, 13, 34) !important;
+    border-radius: 0 !important;
+}
+textarea{
+    border-bottom: 1px solid rgb(89, 13, 34) !important;
+    border-radius: 0 !important;
+}
+
+@media only screen and (max-width: 900px) {
+    .contact{
+        width: 90vw;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+}

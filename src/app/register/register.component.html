@@ -1,0 +1,20 @@
+<div class="login">
+    <div class="signup-classic">
+        <form [formGroup]="registerForm" class="form">
+            <h2>Create Your Accout</h2>
+            <fieldset class="username">
+                <input formControlName="username" name="username" type="text" placeholder="username" />
+            </fieldset>
+            <fieldset class="email">
+                <input formControlName="email" name="email" type="email" placeholder="email" />
+            </fieldset>
+            <fieldset class="password">
+                <input formControlName="password" name="password" type="password" placeholder="password" />
+            </fieldset>
+            <button type="button" class="btn" (click)="register()">sign up</button>
+            <div class="my-4">
+                <span class="bottomlink">Allready a user? <a routerLink="/login">Login</a></span>
+            </div>
+        </form>
+    </div>
+</div>

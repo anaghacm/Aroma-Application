@@ -1,0 +1,19 @@
+.basediv {
+    position: relative;
+}
+
+.bodydiv {
+    position: absolute;
+    width: 75vw;
+    margin-top: 8vh;
+    height: 100%;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .bodydiv {
+        width: 80vw;
+        margin-left: 5vw;
+        margin-top: 5vh;
+    }
+}

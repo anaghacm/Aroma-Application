@@ -1,0 +1,21 @@
+<div class="login">
+    <div class="signup-classic">
+        <form [formGroup]="loginForm" class="form">
+            <h2>Login</h2>
+            <p>Login here using your username and password</p>
+            <fieldset class="username">
+                <input formControlName="username" type="text" placeholder="username" />
+            </fieldset>
+            <fieldset class="password">
+                <input formControlName="password" type="password" placeholder="password" />
+            </fieldset>
+            <button type="button" class="btn" (click)="login()">login </button>
+            <div class="my-4">
+                <span class="bottomlink">Forgot <a routerLink="/forgotpassword">password?</a></span>
+            </div>
+            <div>
+                <span class="bottomlink">Don't have an account? <a routerLink="/register">Sign up</a></span>
+            </div>
+        </form>
+    </div>
+</div>

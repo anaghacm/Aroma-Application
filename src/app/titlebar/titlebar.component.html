@@ -1,0 +1,59 @@
+<div class="collapse" id="navbarToggleExternalContent" mdbCollapse #externalContent="mdbCollapse">
+    <div class="bg-transparent p-4 menudiv">
+        <div class="shop">
+            <p>SHOP</p>
+            <a routerLink="/perfumes" (click)="categorymen()">Men</a><br>
+            <a routerLink="/perfumes" (click)="categorywomen()">Women</a><br>
+            <a routerLink="/perfumes" (click)="categoryunisex()">Unisex</a><br>
+            <a href="#">Collections</a>
+        </div>
+        <div class="connect">
+            <p>NAVIGATION</p>
+            <a routerLink="">Home</a><br>
+            <a routerLink="/about">About</a><br>
+        </div>
+        <div class="info">
+            <p>INFO</p>
+            <a routerLink="/shipping">Shipping / Returns</a><br>
+            <a routerLink="/terms">T & C's</a><br>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <span id="links1">
+        <button class="navbar-toggler btn-sm bg-transparent" type="button" (click)="externalContent.toggle()"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i> MENU
+        </button>
+        <a routerLink="/perfumes" (click)="category()">SHOP</a>
+        <!-- <a href="">ABOUT</a> -->
+    </span>
+    <span><a routerLink="">AROMA</a></span>
+    <span id="links2">
+        <a routerLink="/login">SIGN IN</a>
+        <a href="">CART</a>
+    </span>
+</div>
+<div class="main">
+    <div class="sidebar">
+        <p>SHOP</p>
+        <a routerLink="/perfumes" (click)="categorymen()">Men</a><br>
+        <a routerLink="/perfumes" (click)="categorywomen()">Women</a><br>
+        <a routerLink="/perfumes" (click)="categoryunisex()">Unisex</a><br>
+        <div mdbDropdown class="btn-group dropend">
+            <button id="collection" type="button" class="dropdown-toggle" mdbDropdownToggle aria-expanded="false">
+                Collections
+            </button>
+            <ul mdbDropdownMenu class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/perfumes" (click)="serieslove()">Love</a></li>
+                <li><a class="dropdown-item" routerLink="/perfumes" (click)="seriesedge()">Edge</a></li>
+                <li><a class="dropdown-item" routerLink="/perfumes" (click)="seriesprivate()">Private</a></li>
+                <li><a class="dropdown-item" routerLink="/perfumes" (click)="serieswild()">Wild</a></li>
+                <li><a class="dropdown-item" routerLink="/perfumes" (click)="seriesheritage()">Heritage</a></li>
+            </ul>
+        </div>
+
+        <img src="https://i.postimg.cc/HLdYfFm5/collections-300x155.jpg" alt="">
+    </div>
+</div>

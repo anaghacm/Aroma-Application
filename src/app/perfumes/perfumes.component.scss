@@ -1,0 +1,47 @@
+.perfumeslist {
+    width: 70vw;
+    padding: 5rem;
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
+    color: rgb(89, 13, 34);
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.card-text {
+    font-size: 11px;
+}
+
+.card .imgtop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.card:hover .imgtop {
+    display: inline;
+    opacity: 0.8;
+}
+
+.card:hover #frimg {
+    // display: inline;
+    opacity: 0;
+}
+
+button {
+    background-color: white;
+    color: rgb(89, 13, 34);
+    font-weight: bold;
+    border: 1px solid rgb(89, 13, 34);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+button:hover {
+    background-color: rgb(89, 13, 34);
+    color: rgb(241, 224, 227);
+}
