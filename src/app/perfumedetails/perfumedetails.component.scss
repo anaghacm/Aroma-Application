@@ -1,0 +1,79 @@
+* {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.perfumebase {
+    width: 60vw;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+}
+
+.imgdiv {
+    width: 25vw;
+    height: 45vh;
+    transition: all .5s;
+}
+.imgdiv:hover{
+    transform: scale(1.5);
+}
+
+.textdiv {
+    width: 30vw;
+    height: 100%;
+    color: rgb(89, 13, 34);
+    text-align: left;
+    padding-top: 5vh;
+    z-index: 100;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.btndiv {
+    width: 30vw;
+    height: 8vh;
+    background-color: white;
+}
+.btndiv a{
+    text-decoration: underline;
+    color: rgb(89, 13, 34);
+    font-size: 14px;
+}
+button {
+    background-color: rgb(89, 13, 34);
+    color: white;
+    font-size: 16px;
+    // border-radius: 0;
+    // font-weight: bold;
+}
+button:hover{
+    color: white;
+
+}
+@media only screen and (max-width: 900px) {
+    // .perfumebase {
+    //     display: block;
+    // }
+.btndiv{
+    width: 40vw;
+}
+    .imgdiv {
+        width: 60vw;
+    }
+
+    .textdiv {
+        width: 60vw;
+    }
+}

@@ -26,15 +26,21 @@ export class LoginComponent implements OnInit {
     // if(this.loginForm.valid){
     var username = this.loginForm.value.username
     var password = this.loginForm.value.password
-    
+
     const result: any = this.ds.login(username, password)
       .subscribe((result: any) => {
-        alert(result.message)
-        // this.router.navigateByUrl('')
+        localStorage.setItem('category', 'all')
+        localStorage.setItem('currentUser', result.currentUser)
+        localStorage.removeItem('series')
+        if (this.router.url == '/perfumes') {
+          window.location.reload()
+        }
+        // this.router.navigateByUrl('/perfumes')
       },
         (result: any) => {
           alert(result.error.message)
         })
     // }
   }
+  
 }

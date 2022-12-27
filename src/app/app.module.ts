@@ -32,6 +32,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfumesComponent } from './perfumes/perfumes.component';
+import { PerfumedetailsComponent } from './perfumedetails/perfumedetails.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { PerfumesComponent } from './perfumes/perfumes.component';
     RegisterComponent,
     LoginComponent,
     ForgotpasswordComponent,
-    PerfumesComponent
+    PerfumesComponent,
+    PerfumedetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

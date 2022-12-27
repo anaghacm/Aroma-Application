@@ -1,0 +1,29 @@
+<div class="perfumebase">
+    <div class="imgdiv">
+        <img src={{perfume.url}} class="w-100 h-100" alt="">
+    </div>
+    <div class="textdiv">
+        <h4>{{perfume.name}}</h4>
+        <p>{{perfume.fragrance}}</p>
+        <p style="font-size: 16px; font-weight: bold;">
+            ₹ {{perfume.price}}
+        </p>
+        <!-- <p>Tope Note</p> -->
+        <p>TopeNote : <span style="font-style: italic;"> {{perfume.topnote}}</span></p>
+        <!-- <p>Base Note</p> -->
+        <p>Base Note : <span style="font-style: italic;"> {{perfume.basenote}}</span></p>
+        <p>Description</p>
+        <p>{{perfume.description}}</p>
+        <div>
+            <p style="font-size: 16px; font-weight: bold;">Qnty : <input [(ngModel)]="qnty" name="qnty" type="number"
+                    min="1" max="100" value="1" class="ms-3"></p>
+        </div>
+        <div class="btndiv">
+            <button class="btn me-5" (click)="addtoCart(perfume.productid, perfume.name, perfume.price,perfume.url)">ADD
+                TO CART</button>
+            <span><a routerLink="/perfumes">More Shop</a></span>
+        </div>
+
+    </div>
+
+</div>

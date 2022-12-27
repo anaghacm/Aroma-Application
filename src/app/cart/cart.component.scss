@@ -1,0 +1,68 @@
+
+.cartbase {
+    width: 60vw;
+    padding: 50px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+th {
+    color: rgb(89, 13, 34);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+td {
+    color: rgb(89, 13, 34);
+    font-size: 12px;
+}
+
+#rmvlink {
+    width: 20vw;
+    // left: 25vw;
+}
+
+.btndiv {
+    width: 10vw;
+    height: 7vh;
+    background-color: white;
+    float: right;
+    margin-top: 40px;
+}
+
+button {
+    background-color: rgb(89, 13, 34);
+    color: white;
+    font-size: 14px;
+    // font-weight: bold;
+}
+button:hover{
+    color: white;
+}
+p {
+    color: rgb(89, 13, 34);
+    font-size: 16px;
+    text-align: center;
+}
+
+.emptycart {
+    width: 60vw;
+    padding: 2rem;
+    color: rgb(89, 13, 34);
+    font-size: 16px;
+    font-style: italic;
+ 
+}
+
+
+@media only screen and (max-width: 900px) {
+    .cartbase {
+        padding: 10px;
+        margin-bottom: 100px;
+    }
+
+    .btndiv {
+        float: left;
+        width: 60vw;
+    }
+}

@@ -1,10 +1,12 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { CartComponent } from './cart/cart.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { GetintouchComponent } from './getintouch/getintouch.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PerfumedetailsComponent } from './perfumedetails/perfumedetails.component';
 import { PerfumesComponent } from './perfumes/perfumes.component';
 import { RegisterComponent } from './register/register.component';
 import { ShippingComponent } from './shipping/shipping.component';
@@ -37,6 +39,12 @@ const routes: Routes = [
   },
   {
     path:'perfumes', component:PerfumesComponent
+  },
+  {
+    path:'perfumedetails', component:PerfumedetailsComponent
+  },
+  {
+    path:'cart', component:CartComponent
   }
 ];
 

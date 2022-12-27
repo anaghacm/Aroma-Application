@@ -1,10 +1,27 @@
 .carcontainer {
-  width: 50vw;
-  height: 75vh !important;
+  width: 55vw;
+  height: 85vh !important;
   margin: auto;
   padding-top: 10vh;
 }
+.carousel-caption{
+  color: rgb(226, 111, 3);
+  left: 0%;
+  top: 40%;
+  width: 50vh;
+  font-family: 'Libre Baskerville', serif;
+}
+#secslide{
+  left: 0%;
+  top: 40%;
+  color: rgb(4, 56, 87);
 
+}
+#thirdslide{
+  left: 10%;
+  top: 40%;
+  color: rgb(179, 93, 8);
+}
 .carddiv {
   width: 60vw;
   // height: 75vh !important;
@@ -156,6 +173,7 @@ p {
 @media only screen and (max-width: 900px) {
   .carcontainer {
     width: 84vw;
+    height: 40vh;
     margin: auto;
   }
   .lgcard{

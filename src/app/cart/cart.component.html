@@ -1,0 +1,46 @@
+<div class="cartbase">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">PRODUCT</th>
+                    <!-- <th scope="col"></th> -->
+                    <th scope="col">PRICE</th>
+                    <th scope="col">QUANTITY</th>
+                    <th scope="col">TOTAL</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider table-divider-color">
+                <tr *ngFor="let c of cart">
+                    <td><img class="w-25 h-25" src={{c.url}} alt=""><span
+                            style="font-size: 16px; font-weight: bold;">{{c.pname}} <br></span></td>
+                    <!-- <td style="text-align: left;"></td> -->
+                    <td class="p-0" style="text-align: center; vertical-align:middle;"><i
+                            class="fa-solid fa-indian-rupee-sign"></i>{{c.price}}</td>
+                    <td style="text-align: center; vertical-align:middle;">{{c.number}}</td>
+                    <td class="p-0" style="text-align: center; vertical-align:middle;"><i
+                            class="fa-solid fa-indian-rupee-sign"></i>{{c.totalprice}}</td>
+                            <td class="p-0" style="text-align: center; font-size: 10px; text-decoration: underline; vertical-align:middle;"><a routerLink="/cart" (click)="removeItem(c.productid, c.username)">REMOVE</a> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td style="font-size: 14px; font-weight: bold;">Subtotal:</td>
+                    <td class="p-0" style="font-size: 12px; font-weight: bold; vertical-align: middle;"><i
+                            class="fa-solid fa-indian-rupee-sign"></i>{{subtotal}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="btndiv">
+        <button class="btn w-100 h-100 mx-3" routerLink="/perfumes">MORE SHOP</button>
+    </div>
+    <div class="btndiv">
+        <button class="btn w-100 h-100">CHECK OUT</button>
+    </div>
+   
+</div>
+<!-- <div class="emptycart" *ngIf="emptycart==1">
+    <p>Ooopz.. No items are available in the cart..!</p>
+</div> -->

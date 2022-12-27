@@ -1,43 +1,88 @@
-<div class="collapse" id="navbarToggleExternalContent" mdbCollapse #externalContent="mdbCollapse">
-    <div class="bg-transparent p-4 menudiv">
-        <div class="shop">
-            <p>SHOP</p>
-            <a routerLink="/perfumes" (click)="categorymen()">Men</a><br>
-            <a routerLink="/perfumes" (click)="categorywomen()">Women</a><br>
-            <a routerLink="/perfumes" (click)="categoryunisex()">Unisex</a><br>
-            <a href="#">Collections</a>
-        </div>
-        <div class="connect">
-            <p>NAVIGATION</p>
-            <a routerLink="">Home</a><br>
-            <a routerLink="/about">About</a><br>
-        </div>
-        <div class="info">
-            <p>INFO</p>
-            <a routerLink="/shipping">Shipping / Returns</a><br>
-            <a routerLink="/terms">T & C's</a><br>
+<div class="container row">
+    <div class="collapse" id="navbarToggleExternalContent" mdbCollapse #externalContent="mdbCollapse">
+        <div class="bg-transparent p-4 menudiv">
+            
+            <div class="shop">
+                <p><label class="px-3 py-1">SHOP</label></p>
+                <a routerLink="/perfumes" (click)="categorymen()">Men</a><br>
+                <a routerLink="/perfumes" (click)="categorywomen()">Women</a><br>
+                <a routerLink="/perfumes" (click)="categoryunisex()">Unisex</a><br>
+                <div mdbDropdown class="btn-group dropend">
+                    <button id="collection" type="button" class="dropdown-toggle" mdbDropdownToggle
+                        aria-expanded="false">
+                        Collections
+                    </button>
+                    <ul mdbDropdownMenu class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/perfumes" (click)="serieslove()">Love</a></li>
+                        <li><a class="dropdown-item" routerLink="/perfumes" (click)="seriesedge()">Edge</a></li>
+                        <li><a class="dropdown-item" routerLink="/perfumes" (click)="seriesprivate()">Private</a></li>
+                        <li><a class="dropdown-item" routerLink="/perfumes" (click)="serieswild()">Wild</a></li>
+                        <li><a class="dropdown-item" routerLink="/perfumes" (click)="seriesheritage()">Heritage</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="connect">
+                <p><label class="px-3 py-1">NAVIGATION</label></p>
+                <a routerLink="">Home</a><br>
+                <a routerLink="/about">About</a><br>
+            </div>
+            <div class="info">
+                <p><label class="px-3 py-1">INFO</label></p>
+                <a routerLink="/shipping">Shipping / Returns</a><br>
+                <a routerLink="/terms">T & C's</a><br>
+            </div>
         </div>
     </div>
-</div>
+    <div class="show">
+        <span id="links1">
+            <button class="navbar-toggler btn-sm bg-transparent" type="button" (click)="externalContent.toggle()"
+                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i> MENU
+            </button>
 
-<div class="container">
-    <span id="links1">
-        <button class="navbar-toggler btn-sm bg-transparent" type="button" (click)="externalContent.toggle()"
-            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i> MENU
-        </button>
-        <a routerLink="/perfumes" (click)="category()">SHOP</a>
-        <!-- <a href="">ABOUT</a> -->
-    </span>
-    <span><a routerLink="">AROMA</a></span>
-    <span id="links2">
-        <a routerLink="/login">SIGN IN</a>
-        <a href="">CART</a>
-    </span>
+            <a id="menubtn" routerLink="/perfumes" (click)="category()">SHOP</a>
+            <!-- <a href="">ABOUT</a> -->
+        </span>
+        <span id="aroma"><a routerLink=""><i class="fa-solid fa-spray-can-sparkles" style="font-size: 20px;"></i> AROMA</a></span>
+        <span id="links2">
+            <button *ngIf="currentUser==''" routerLink="/login" type="button" class="btn px-0 pt-1" style="box-shadow: none;">SIGN IN</button>
+            <button  *ngIf="currentUser" routerLink="" type="button" (click)="logout()" class="btn px-0 pt-1" style="box-shadow: none;">LOG OUT</button>
+
+            <!-- <a *ngIf="currentUser==''" routerLink="/login">SIGN IN</a> -->
+            <!-- <a  *ngIf="currentUser" routerLink="" (click)="logout()">LOG OUT</a> -->
+            <!-- <a href="">CART</a> -->
+       
+            <span mdbDropdown class="dropdown">
+                <button id="collection1" class="btn p-1 dropdown-toggle" type="button" mdbDropdownToggle
+                    aria-expanded="false" [disabled]="items==0">
+                    CART<span class="badge bg-danger ms-2">{{items}}</span>
+                </button>
+                <div mdbDropdownMenu class="dropdown-menu dpdmenu">
+                    <div class="itemlist">
+                        <div class="basecart" *ngFor="let c of carts">
+                            <div class="imgdiv">
+                                <img src={{c.url}} alt="Trendy Pants and Shoes" />
+                            </div>
+                            <div class="textdiv pt-4">
+                                <h6> {{c.pname}}</h6>
+                                <p>{{c.number}} * {{c.price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cartbtn">
+                        <button class="btn btn-sm my-1 px-3 mx-2" (click)="viewCart()">View Cart</button>
+                        <button class="btn btn-sm my-1 px-3 mx-2">Check Out</button>
+                    </div>
+
+                </div>
+            </span>
+
+        </span>
+    </div>
 </div>
 <div class="main">
     <div class="sidebar">
-        <p>SHOP</p>
+        <p><label class="px-3 py-1">SHOP</label></p>
         <a routerLink="/perfumes" (click)="categorymen()">Men</a><br>
         <a routerLink="/perfumes" (click)="categorywomen()">Women</a><br>
         <a routerLink="/perfumes" (click)="categoryunisex()">Unisex</a><br>
