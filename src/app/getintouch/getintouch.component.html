@@ -1,24 +1,28 @@
 <div class="contact">
-    <h3>Get in Touch</h3>
-    <p>Have a question about a product or an order, drop us a <br> message and we'll get back to you.</p>
-    <mdb-form-control class="px-5">
-        <div class="input-group w-50 mb-3 mt-4" style="margin: auto;">
-            <input mdbInput type="text" id="form1" class="form-control" />
-            <label mdbLabel class="form-label" for="form1">Name</label>
-        </div>
-        <div class="input-group w-50 mb-3 mt-4" style="margin: auto;">
-            <input mdbLabel type="email" id="typeEmail" class="form-control" />
-            <label mdbInput class="form-label" for="typeEmail">Email</label>
-        </div>
-        <div class="input-group w-50 mb-3 mt-4" style="margin: auto;">
-            <input type="tel" id="typePhone" class="form-control" />
-            <label class="form-label" for="typePhone">Phone Number</label>
-        </div>
-        <div class="input-group w-50 mb-3 mt-5" style="margin: auto;">
-            <textarea mdbInput class="form-control" id="textAreaExample" rows="4"></textarea>
-            <label mdbLabel class="form-label" for="textAreaExample">Message</label>
-        </div>
-        <button class="btn px-4 py-2 mt-3">Send</button>
-    </mdb-form-control>
- 
+
+    <form [formGroup]="gitForm" class="form">
+        <h3>Get in Touch</h3>
+        <p>Have a question about a product or an order, drop us a message and we'll get back to you.</p>
+        <fieldset class="username">
+            <input formControlName="name" name="name" type="text" placeholder="Name" />
+        </fieldset>
+        <div *ngIf="this.gitForm.get('name')?.errors&&this.gitForm.get('name')?.touched"
+                    style="color: red; font-size: 12px; text-align: left;">Name is required</div>
+        <fieldset class="email">
+            <input formControlName="email" name="email" type="email" placeholder="Email" />
+        </fieldset>
+        <div style="text-align:left" *ngIf="this.gitForm.get('email')?.errors&&this.gitForm.get('email')?.touched"
+        style="color: red; font-size: 12px; text-align: left;">Enter a valid email id</div>
+        <fieldset class="phonenumber">
+            <input formControlName="phonenumber" name="phonenumber" type="text" placeholder="Phonenumber" />
+        </fieldset>
+        <div style="text-align:left" *ngIf="this.gitForm.get('phonenumber')?.errors&&this.gitForm.get('phonenumber')?.touched"
+        style="color: red; font-size: 12px; text-align: left;">Enter a valid phone number</div>
+        <fieldset class="message">
+            <textarea formControlName="message" name="message" placeholder="Message"></textarea>
+        </fieldset>
+        <div style="text-align:left" *ngIf="this.gitForm.get('message')?.errors&&this.gitForm.get('message')?.touched"
+        style="color: red; font-size: 12px; text-align: left;">Enter your message</div>
+        <button type="button" class="btn" (click)="saveMessage()">Send</button>
+    </form>
 </div>

@@ -6,9 +6,13 @@
             <fieldset class="username">
                 <input formControlName="username" type="text" placeholder="username" />
             </fieldset>
+            <div *ngIf="this.loginForm.get('username')?.errors&&this.loginForm.get('username')?.touched"
+            style="color: red; font-size: 12px; text-align: left;">Username is required</div>
             <fieldset class="password">
                 <input formControlName="password" type="password" placeholder="password" />
             </fieldset>
+            <div *ngIf="this.loginForm.get('password')?.errors&&this.loginForm.get('password')?.touched"
+            style="color: red; font-size: 12px; text-align: left;">Password is required</div>
             <button type="button" class="btn" routerLink="/perfumes" (click)="login()">login </button>
             <div class="my-4">
                 <span class="bottomlink">Forgot <a routerLink="/forgotpassword">password?</a></span>

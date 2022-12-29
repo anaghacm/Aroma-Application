@@ -6,20 +6,21 @@
         <h4>{{perfume.name}}</h4>
         <p>{{perfume.fragrance}}</p>
         <p style="font-size: 16px; font-weight: bold;">
-            ₹ {{perfume.price}}
+            ₹ {{perfume.price-perfume.discount}}
+            <span class="ms-3" style="text-decoration: line-through; color: red;" *ngIf="perfume.discount!=0">₹ {{perfume.price}}</span>
         </p>
         <!-- <p>Tope Note</p> -->
-        <p>TopeNote : <span style="font-style: italic;"> {{perfume.topnote}}</span></p>
+        <p><span style="font-weight: bold;">TopeNote :</span>  <span style="font-style: italic;"> {{perfume.topnote}}</span></p>
         <!-- <p>Base Note</p> -->
-        <p>Base Note : <span style="font-style: italic;"> {{perfume.basenote}}</span></p>
-        <p>Description</p>
+        <p><span style="font-weight: bold;">Base Note : </span><span style="font-style: italic;"> {{perfume.basenote}}</span></p>
+        <p style="font-weight: bold;">Description :</p>
         <p>{{perfume.description}}</p>
         <div>
             <p style="font-size: 16px; font-weight: bold;">Qnty : <input [(ngModel)]="qnty" name="qnty" type="number"
                     min="1" max="100" value="1" class="ms-3"></p>
         </div>
         <div class="btndiv">
-            <button class="btn me-5" (click)="addtoCart(perfume.productid, perfume.name, perfume.price,perfume.url)">ADD
+            <button class="btn me-5" (click)="addtoCart(perfume.productid, perfume.name, perfume.price,perfume.url,perfume.discount)">ADD
                 TO CART</button>
             <span><a routerLink="/perfumes">More Shop</a></span>
         </div>

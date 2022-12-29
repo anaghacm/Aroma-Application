@@ -113,7 +113,7 @@ export class TitlebarComponent implements OnInit {
         }
       },
         (result: any) => {
-          alert(result.error.message)
+          // alert(result.error.message)
         })
   }
 

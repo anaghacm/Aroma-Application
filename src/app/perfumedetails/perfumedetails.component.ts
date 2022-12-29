@@ -24,9 +24,9 @@ export class PerfumedetailsComponent implements OnInit {
   }
 
 
-  addtoCart(id: any, pname: any, price: any, url: any) {
+  addtoCart(id: any, pname: any, price: any, url: any,discount:any) {
     if (this.currentUser) {
-      const result = this.ds.addtoCart(id, pname, price, url, this.qnty, this.currentUser)
+      const result = this.ds.addtoCart(id, pname, price, url, this.qnty,discount, this.currentUser)
         .subscribe((result: any) => {
           alert(result.message)
           window.location.reload()
@@ -37,8 +37,7 @@ export class PerfumedetailsComponent implements OnInit {
           })
     }
     else {
-      var num = 1
-      const result = this.ds.addtoCart(id, pname, price, url, num, "guest")
+      const result = this.ds.addtoCart(id, pname, price, url, this.qnty,discount, "guest")
         .subscribe((result: any) => {
           alert(result.message)
           window.location.reload()

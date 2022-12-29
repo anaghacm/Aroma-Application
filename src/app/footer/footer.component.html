@@ -1,14 +1,18 @@
 <div class="footerdiv">
     <div class="newsletter">
         <p><label class="px-3 py-1">NEWSLETTER</label></p>
-        <input type='email' placeholder='Email' class='input-line'>
+        <form action="" [formGroup]="newsletterForm">
+            <input type='email' formControlName="email" name="email" placeholder='Email' class='input-line' (keyup.enter)="onEnter()">
+            <div *ngIf="this.newsletterForm.get('email')?.errors&&this.newsletterForm.get('email')?.touched"
+            style="color: red; font-size: 12px; text-align: left;">Enter a valid email id</div>
+        </form>
     </div>
     <div class="connect">
         <p><label class="px-3 py-1">CONNECT</label></p>
-        <a href="#">Facebook</a><br>
-        <a href="#">Instagram</a><br>
-        <a href="#">Twitter</a><br>
-        <a href="#">Youtube</a>
+        <a href="https://www.facebook.com/">Facebook</a><br>
+        <a href="https://www.instagram.com/">Instagram</a><br>
+        <a href="https://twitter.com/">Twitter</a><br>
+        <a href="https://www.youtube.com/">Youtube</a>
     </div>
     <div class="info">
         <p><label class="px-3 py-1">INFO</label></p>

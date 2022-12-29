@@ -43,10 +43,10 @@ export class PerfumesComponent implements OnInit {
         })
   }
 
-  addtoCart(id: any, pname: any, price: any, url: any) {
+  addtoCart(id: any, pname: any, price: any, url: any,discount:any) {
     if (this.currentUser) {
       var num = 1
-      const result = this.ds.addtoCart(id, pname, price, url, num, this.currentUser)
+      const result = this.ds.addtoCart(id, pname, price, url, num,discount, this.currentUser)
         .subscribe((result: any) => {
           alert(result.message)
           window.location.reload()
@@ -58,7 +58,7 @@ export class PerfumesComponent implements OnInit {
     }
     else {
       var num = 1
-      const result = this.ds.addtoCart(id, pname, price, url, num, "guest")
+      const result = this.ds.addtoCart(id, pname, price, url, num,discount, "guest")
         .subscribe((result: any) => {
           alert(result.message)
           window.location.reload()

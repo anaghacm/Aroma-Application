@@ -13,15 +13,21 @@
             </thead>
             <tbody class="table-group-divider table-divider-color">
                 <tr *ngFor="let c of cart">
-                    <td><img class="w-25 h-25" src={{c.url}} alt=""><span
-                            style="font-size: 16px; font-weight: bold;">{{c.pname}} <br></span></td>
+                    <td><img class="w-25 h-25" src={{c.url}} alt=""><span style="font-size: 16px; font-weight: bold;">
+                            <a routerLink="/perfumedetails" (click)="perfumeDetails(c)"
+                                style="color: rgb(89, 13, 34);text-decoration: underline;"> {{c.pname}} </a><br></span>
+                    </td>
                     <!-- <td style="text-align: left;"></td> -->
-                    <td class="p-0" style="text-align: center; vertical-align:middle;"><i
-                            class="fa-solid fa-indian-rupee-sign"></i>{{c.price}}</td>
+                    <td class="p-0" style="text-align: center; vertical-align:middle;">
+                        <span class="me-2" style="text-decoration: line-through; color: red;" *ngIf="c.price!=c.disprice"><i class="fa-solid fa-indian-rupee-sign"></i>{{c.price}}</span>
+                        <span><i class="fa-solid fa-indian-rupee-sign"></i>{{c.disprice}}</span></td>
                     <td style="text-align: center; vertical-align:middle;">{{c.number}}</td>
                     <td class="p-0" style="text-align: center; vertical-align:middle;"><i
                             class="fa-solid fa-indian-rupee-sign"></i>{{c.totalprice}}</td>
-                            <td class="p-0" style="text-align: center; font-size: 10px; text-decoration: underline; vertical-align:middle;"><a routerLink="/cart" (click)="removeItem(c.productid, c.username)">REMOVE</a> </td>
+                    <td class="p-0"
+                        style="text-align: center; font-size: 10px; text-decoration: underline; vertical-align:middle;">
+                        <a routerLink="/cart" (click)="removeItem(c.productid, c.username)">REMOVE</a>
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
@@ -37,10 +43,8 @@
         <button class="btn w-100 h-100 mx-3" routerLink="/perfumes">MORE SHOP</button>
     </div>
     <div class="btndiv">
-        <button class="btn w-100 h-100">CHECK OUT</button>
+        <button class="btn w-100 h-100" *ngIf="cart[0].username!='guest'">CHECK OUT</button>
+        <button class="btn w-100 h-100" routerLink="/register" *ngIf="cart[0].username=='guest'">SIGN IN</button>
     </div>
-   
+
 </div>
-<!-- <div class="emptycart" *ngIf="emptycart==1">
-    <p>Ooopz.. No items are available in the cart..!</p>
-</div> -->

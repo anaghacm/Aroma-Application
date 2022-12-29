@@ -10,7 +10,7 @@ import { DataService } from '../services/data.service';
 })
 export class ForgotpasswordComponent implements OnInit {
 
-
+  patternmissmatch: any = 0
   forgotForm = this.fb.group({
     username: ['', [Validators.required, Validators.pattern('[A-Za-z]*')]],
     password: ['', [Validators.required, Validators.pattern('[A-Za-z0-9]*')]],
@@ -22,23 +22,24 @@ export class ForgotpasswordComponent implements OnInit {
   }
 
   resetpassword() {
-    // if(this.loginForm.valid){
-    var username = this.forgotForm.value.username
-    var password = this.forgotForm.value.password
-    var repassword = this.forgotForm.value.repassword
-    if (password == repassword) {
-      const result: any = this.ds.resetpassword(username, password)
-        .subscribe((result: any) => {
-          alert(result.message)
-          this.router.navigateByUrl('/login')
-        },
-          (result: any) => {
-            alert(result.error.message)
-          })
+    if (this.forgotForm.valid) {
+      var username = this.forgotForm.value.username
+      var password = this.forgotForm.value.password
+      var repassword = this.forgotForm.value.repassword
+      if (password == repassword) {
+        this.patternmissmatch = 0
+        const result: any = this.ds.resetpassword(username, password)
+          .subscribe((result: any) => {
+            alert(result.message)
+            this.router.navigateByUrl('/login')
+          },
+            (result: any) => {
+              alert(result.error.message)
+            })
+      }
+      else {
+        this.patternmissmatch = 1
+      }
     }
-    else {
-      alert('Enter the correct password')
-    }
-    // }
   }
 }

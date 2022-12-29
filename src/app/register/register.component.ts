@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
   registerForm = this.fb.group({
     username: ['', [Validators.required, Validators.pattern('[A-Za-z]*')]],
     password: ['', [Validators.required, Validators.pattern('[A-Za-z0-9]*')]],
-    email: ['', [Validators.required, Validators.pattern('[A-Za-z]*')]]
+    email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]]
   })
 
   constructor(private fb: FormBuilder, private ds: DataService, private router: Router) { }
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   register() {
 
-    // if(this.registerForm.valid){
+    if(this.registerForm.valid){
     var username = this.registerForm.value.username
     var password = this.registerForm.value.password
     var email = this.registerForm.value.email
@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
         (result: any) => {
           alert(result.error.message)
         })
-    // }
+    }
   }
 
 }

@@ -6,60 +6,47 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h5>This is the </h5>
                     <h2>MOMENT</h2>
-                  </div>
+                </div>
             </mdb-carousel-item>
             <mdb-carousel-item>
                 <img src="../../assets/images/wall (1).jpg" class="d-block w-100 h-100" alt="..." />
                 <div id="secslide" class="carousel-caption d-none d-md-block">
                     <h5>This is the </h5>
                     <h2>PASSION</h2>
-                  </div>
+                </div>
             </mdb-carousel-item>
             <mdb-carousel-item>
                 <img src="https://i.postimg.cc/XJN6q2dN/wall-2.jpg" class="d-block w-100 h-100" alt="..." />
                 <div id="thirdslide" class="carousel-caption d-none d-md-block">
                     <h5>This is the </h5>
                     <h2>SCENT</h2>
-                  </div>
+                </div>
             </mdb-carousel-item>
         </mdb-carousel>
     </div>
 
     <div class="carddiv">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
+            <div class="col px-4 py-2" *ngFor="let r of random">
                 <div class="card h-100">
-                    <img id="frimg" src="https://i.postimg.cc/cJbP1sxh/HAMSAH-1-1.jpg" class="card-img-top" alt="" />
-                    <img src="https://i.postimg.cc/2yG63HHC/HAMSAH-3-1.jpg" class="card-img-top imgtop"
-                        alt="Card Front">
+                    <a routerLink="/perfumedetails" (click)="pushDetails(r)">
+                        <img id="frimg" src={{r.url}} class="card-img-top" alt="" />
+                        <img src={{r.url1}} class="card-img-top imgtop" alt="Card Front">
+                    </a>
                     <div class="card-body">
-                        <h5 class="card-title">HAMSAH</h5>
+                        <h5 class="card-title">{{r.name}}</h5>
                         <p class="card-text">
-                            White Floral, Honey
+                            {{r.fragrance}}
                         </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-75 w-75" style="margin-top: 10vh !important; margin: auto;">
-                    <img id="frimg" src="https://i.postimg.cc/fLFsPcSw/EDGE-WOMEN-1-1.jpg" class="card-img-top"
-                        alt="" />
-                    <img src="https://i.postimg.cc/Nf0TmTRd/EDGE-WOMEN-3-1.jpg" class="card-img-top imgtop"
-                        alt="Card Front">
-                    <div class="card-body pb-5">
-                        <h5 class="card-title">EDGE</h5>
-                        <p class="card-text">Fruity, Citrus</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img id="frimg" src="https://i.postimg.cc/yxtNFqyy/ANAQA-1-1.jpg" class="card-img-top" alt="" />
-                    <img src="https://i.postimg.cc/X7TJqyLG/ANAQA-3-1.jpg" class="card-img-top imgtop" alt="Card Front">
-                    <div class="card-body">
-                        <h5 class="card-title">ANAQA</h5>
+                        <p class="card-text" style="font-size: 14px; font-weight: bold;">
+                            <i class="fa-solid fa-indian-rupee-sign"></i> {{r.price-r.discount}}
+                            <span class="ms-3" style="text-decoration: line-through; color: red;"
+                                *ngIf="r.discount!=0"><i class="fa-solid fa-indian-rupee-sign"></i> {{r.price}}</span>
+                        </p>
                         <p class="card-text">
-                            Amber,Floral, Woody
+                            <button class="btn btn-lg"
+                                (click)="addtoCart(r.productid, r.name, r.price,r.url,r.discount)">ADD TO CART <i
+                                    class="fa-solid fa-cart-shopping" style="font-size: 18px;"></i></button>
                         </p>
                     </div>
                 </div>

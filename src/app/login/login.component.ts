@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   login() {
 
-    // if(this.loginForm.valid){
+    if(this.loginForm.valid){
     var username = this.loginForm.value.username
     var password = this.loginForm.value.password
 
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         (result: any) => {
           alert(result.error.message)
         })
-    // }
+    }
   }
   
 }

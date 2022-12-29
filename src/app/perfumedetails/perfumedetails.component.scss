@@ -18,7 +18,8 @@
     height: 45vh;
     transition: all .5s;
 }
-.imgdiv:hover{
+
+.imgdiv:hover {
     transform: scale(1.5);
 }
 
@@ -46,11 +47,13 @@ p {
     height: 8vh;
     background-color: white;
 }
-.btndiv a{
+
+.btndiv a {
     text-decoration: underline;
     color: rgb(89, 13, 34);
     font-size: 14px;
 }
+
 button {
     background-color: rgb(89, 13, 34);
     color: white;
@@ -58,17 +61,21 @@ button {
     // border-radius: 0;
     // font-weight: bold;
 }
-button:hover{
+
+button:hover {
     color: white;
 
 }
+
 @media only screen and (max-width: 900px) {
+
     // .perfumebase {
     //     display: block;
     // }
-.btndiv{
-    width: 40vw;
-}
+    .btndiv {
+        width: 40vw;
+    }
+
     .imgdiv {
         width: 60vw;
     }
